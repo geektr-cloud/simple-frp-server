@@ -7,8 +7,8 @@ services:
       - "./.env"
     volumes:
       - "./frps.ini:/etc/frp/frps.ini:ro"
-    port:
-      - "${BIND_TCP_PORT}"
-      - "${BIND_UDP_PORT}"
-      - "${DASHBOARD_PORT}"
-      - "${PORT_RANGE}"
+    ports:
+      - "${BIND_TCP_PORT}:${BIND_TCP_PORT}"
+      - "${BIND_UDP_PORT}:${BIND_UDP_PORT}"
+      - "${DASHBOARD_PORT}:${DASHBOARD_PORT}"
+      - "${PORT_RANGE}:${PORT_RANGE}"
